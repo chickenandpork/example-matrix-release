@@ -3,8 +3,7 @@ name: CI
 # yamllint disable-line rule:truthy
 on:
   push:
-    branches:
-      - master
+    # the 'v*' tag means this implicitly runs after the bump.yml
     tags:
       - "v*"
   pull_request:
