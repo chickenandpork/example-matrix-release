@@ -47,11 +47,12 @@ jobs:
         with:
           merge-multiple: true
       - name: Automatic Release
+        id: 'automatic_releases'
         uses: 'marvinpinto/action-automatic-releases@latest'
         with:
           repo_token: '${{ secrets.GITHUB_TOKEN }}'
-          prerelease: false
+          automatic_release_tag: "latest"
           files: |
-            build-denverton
             build-geminilake
-        id: 'automatic_releases'
+            build-denverton
+          prerelease: false
